@@ -5,202 +5,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="images/favicon-32x32.png">
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="crossorigin="anonymous"></script>
     <title>Registration form</title>
 
 </head>
 <body>
-    <section id="main">
-        <div id="text">
+    <!--main section-->
+    <section id="main" role="main-section">
+        <div id="text" role="text-content">
             <h1>Learn to code by watching others</h1>
-            <p>See how experienced developers solve real world problems in real time.
+            <p style="line-height:2.0;">See how experienced developers solve real world problems in real time.
                 Watching scripted tutorials is great,but understanding how developers think is invaluable.
             </p>
         </div>
         <div id="container">
-       <div id ="offer">
-           <p><strong>Try it free 7 days </strong>then $20/mo. thereafter</p>
+            <!--offer button-->
+       <div id ="offer" role="offer-button">
+           <p style="width:auto;"><strong>Try it free 7 days </strong>then $20/mo. thereafter</p>
        </div>
-
-       <div id="hello">
+       
+       <div id="hello" role="form">
             <form method="GET">
                 <input type="text" id="f_name" placeholder="First Name" required>
-              
+            <div class="error" id="error1">
+                <i class="fa fa-2x fa-exclamation-circle error-icon"></i>
+                <small class="">First name can't be blank</small>
+            </div>
                 <input type="text" id="l_name" placeholder="Last Name"  required>
-               
-                <input type="email" placeholder="Email Address"  required>
-                
-                <input type="password" placeholder="Password"  required>
-               
-                <input type="submit" value="CLAIM YOUR FREE TRIAL" onclick="validate()";>
+                 <div class="error" id="error2">
+                <i class="fa fa-2x  fa-exclamation-circle error-icon"></i>
+                <small class="">Last name can't be blank</small>
+            </div>
+                <input type="email" placeholder="Email Address"  id="emailfield" required>
+                 <div class="error" id="error3">
+                <i class="fa fa-2x fa-exclamation-circle error-icon"></i>
+                <small class="">Looks like that isn't an email</small>
+            </div>
+                <input type="password" placeholder="Password"  id="passwordfield" required>
+                 <div class="error" id="error4">
+                <i class="fa fa-2x fa-exclamation-circle error-icon"></i>
+                <small class="">Password cannot be blank</small>
+            </div>
+                <input type="submit" value="CLAIM YOUR FREE TRIAL" onclick="validate();">
                 <h4>By clicking this button, you agree to our <a href="#">Terms and Services</a></h4>
                 
 
             </form>
         </div>
         </div>
-    </section>
-
-
-
-    <style>
-       @media screen and (max-width:375px){
-           body{
-               background: var(--red);
-               background-image: url("Project1/Registration-form/images/bg-intro-mobile.png");
-           }
-          #text,#container #offer, #hello{
-              flex-direction:column;
-          }
-          
-       }
-        :root{
-            --red:hsl(0, 100%, 74%);
-            --green:hsl(154, 59%, 51%);
-            --blue:hsl(248, 32%, 49%);
-            --darkblue:hsl(249, 10%, 26%);
-            --greyblue:hsl(246, 25%, 77%);
         
+    </section>
+       <!--attribution starts here -->
+    <div id="attribution" role="credits">
+        <p style="text-align:center;">Designed by <a href="https://frontendmentor.io">Frontend Mentor. </a>Coded by <a href="https://github.com/IwegbuJeddy">Iwegbu Jeddy</a></p>
+    </div>
+    <script>
+        $(document).ready(function(){
+        validate = () =>{
+            let firstName = $("#f_name");
+            let lastName = $("#l_name");
+            let emailField = $("#emailfield");
+            let emailValue = emailField.val().toString();
+            let passwordField = $("#passwordfield");
+            let error1 = $("#error1");
+            let error2 = $("#error2");
+            let error3 = $("#error3");
+            let error4 = $("#error4");
+        //Function for validation of form
+        //Validation for first name
+        if(firstName.val().length == 0){
+           firstName.css("border", "1.5px solid var(--red)");
+             error1.css("display", "flex");
         }
-        *{
-            font-family: Poppins, 'Calibri',san-serif;
-            text-decoration: none;
+        //Validation for last name 
+        if(lastName.val().length == 0) {
+            lastName.css("border", "1.5px solid var(--red)");
+               error2.css("display","flex");
         }
-        body{
-            padding: 0;
-            margin: 0;
-            font-family:Poppins,'Calibri',san-serif;
-            background: var(--red);
-            background-image: url("images/bg-intro-desktop.png");
-        }
-        #main{
-            display:flex;
-        }
-        #text{
-            width:50%;
-            padding:10%;
-        }
-        h1{
-            font-size:50px;
-            font-weight:700;
-            line-height: 1;
-            color:white;
-            
-           
-        }
-        p{
-            font-size: 16px;
-            line-height: 3;
-            color:white;
-            
-        }
-        #container{
-            flex-direction: column;
-            width:50%;
-            height:40px;
-            margin-top: 4%;
-            background-size: cover;
-           
-           
+        else{
+            lastName.css("border", "1.5px solid var(--greyblue)");
         }
        
-        form{
-            width:100%;
-            height:80%;
-            display: inline-block;
-        }
-        #container #offer{
-            background:var(--blue);
-            width:80%;
-            text-align: center;
-            border-radius: 5px;
-            box-shadow: 2px 2px 0.6px 0.6px rgba(0,0,0,0.5);
-            
-            
-        }
-      
-        #hello{
-            background: white;
-            width:80%;
-            border-radius: 10px;
-            height:350px;
-        }
-        input{
-            width:90%;
-            height:30px;
-            border:none;
-            outline:none;
-            margin:10px;
-            border-radius: 5px;
-            font-family:Poppins, 'Calibri',san-serif;
-            font-size:20px;
-            font-weight: 700;
-            padding:5px;
-            cursor: pointer;
-            
-            
-        }
-        input[type="submit"]{
-            background:var(--green);
-            color:white;
-            font-family:Poppins, 'Calibri',san-serif;
-            font-weight:700;
-            padding:5px;
-            height:40px;
-            font-size:17px;
-            
-        }
-        
-        input:hover{
-            border:1px solid var(--greyblue);
-        }
-        ::placeholder{
-        font-family:Poppins, 'Calibri',san-serif;
-        font-size:17px;
-        font-weight: 700;
-        color:var(--greyblue);
-    }
-    h4{
-        color:var(--greyblue);
-        margin-left: 6px;
-        font-size: 15px;
-        text-align: center;
-    }
-    h4 a{
-        color:var(--red);
-        font-size:14px;
-        
-    }
-    
-    </style>
-    <script>
-        validate=()=>{
-        
-        if(document.querySelector('#f_name').value.length == 0){
-            document.querySelector('#f_name').style.border = '1.5px solid var(--red)';   
+        //Email field validation 
+        let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/gmi;
+        if(emailRegex.test(emailValue) == false) {
+            emailField.css("border", "1.5px solid var(--red)");
+               emailField.css("display","flex");
+               console.log(emailRegex.test(emailField));
         }
         else{
-            document.querySelector("#f_name").style.border = 'none';
+            emailField.css("border", "1.5px solid var(--greyblue)");
+            error3.css("display","none");
+            console.log(emailRegex.test(emailField));
         }
-        if(document.querySelector('#l_name').value.length == 0){
-            document.querySelector('#l_name').style.border = '1.5px solid var(--red)';
-        }
-        else{
-            document.querySelector("#l_name").style.border = 'none';
-        }
-        if(document.querySelector('input[type="email"]').value.length == 0){
-            document.querySelector('input[type="email"]').style.border = '1.5px solid var(--red)';
-        }
-        else{
-            document.querySelector('input[type="email"]').style.border = 'none';
-        }
-        if(document.querySelector('input[type="password"]').value.length == 0){
-            document.querySelector('input[type="password"]').style.border = '1.5px solid var(--red)';
+        //Password field validation 
+        if(passwordField.val().length == 0){
+            passwordField.css("border", "1.5px solid var(--red)");
+                passwordField.css("display", "flex");
+                error4.css("display","flex");
         }
         else{
-            document.querySelector('input[type="password"]').style.border = 'none';
+            passwordField.css("border", "1.5px solid var(--greyblue)");
+            error4.css("display","none");
         }
-    
     }
+});
         </script>
 </body>
 </html>

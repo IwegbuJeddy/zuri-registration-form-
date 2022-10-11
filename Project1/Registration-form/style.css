@@ -1,0 +1,161 @@
+/*colors in the style guide*/
+:root{
+    --red:hsl(0, 100%, 74%);
+    --green:hsl(154, 59%, 51%);
+    --blue:hsl(248, 32%, 49%);
+    --darkblue:hsl(249, 10%, 26%);
+    --greyblue:hsl(246, 25%, 77%);
+
+}
+*{
+    font-family: Poppins, 'Calibri',san-serif;
+    text-decoration: none;
+}
+/*For smaller screens */
+@media screen and (min-width:240px) and (max-width:768px){
+    h1, p{
+        line-height: none;
+        font-size: 3rem;
+        width:70vw;
+    }
+   body{
+       background: var(--red);
+       background-image: url("Project1/Registration-form/images/bg-intro-mobile.png");
+   }
+  section{
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    padding:0;
+    margin:0;
+  }
+  #attribution{
+    display:none;
+  }
+}
+
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family:Poppins,'Calibri',san-serif;
+    background: var(--red);
+    background-image: url("images/bg-intro-desktop.png");
+}
+/*main section */
+section{
+    display:flex;
+}
+/*text div*/
+#text{
+    width:50%;
+    padding:10%;
+}
+h1{
+    font-size:50px;
+    font-weight:700;
+    line-height: 1;
+    color:white;
+    
+   
+}
+p{
+    line-height: 3;
+    font-size: 16px;
+    color:white;
+    
+}
+#container{
+    flex-direction: column;
+    width:50%;
+    height:40px;
+    margin-top: 4%;
+    background-size: cover;
+   
+   
+}
+
+form{
+    width:100%;
+    height:80%;
+    display: inline-block;
+}
+#container #offer{
+    background:var(--blue);
+    width:27rem;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 2px 2px 0.6px 0.6px rgba(0,0,0,0.5);
+    
+    
+}
+
+#hello{
+    background: white;
+    width:27rem;
+    border-radius: 10px;
+    height:22rem;
+    padding-left: 0.3rem;
+}
+input{
+    width:90%;
+    height:30px;
+    border:none;
+    outline:none;
+    margin:10px;
+    border-radius: 5px;
+    font-family:Poppins, 'Calibri',san-serif;
+    font-size:20px;
+    font-weight: 700;
+    padding:5px;
+    cursor: pointer;
+    border:1px solid var(--greyblue);
+    
+}
+
+.error{
+    color:var(--red);
+    position: absolute;
+    right:8rem;
+    display: flex;
+    flex-direction: column;  
+    flex-basis:23%; 
+    align-items: flex-end;
+    flex-basis: 23%;
+    margin-top: -2.95rem;
+    display:none;
+}
+input[type="submit"]{
+    background:var(--green);
+    color:white;
+    font-family:Poppins, 'Calibri',san-serif;
+    font-weight:700;
+    padding:5px 5px 0px 5px;
+    height:40px;
+    font-size:17px;
+    border:none;
+}
+
+input:hover{
+    border:1px solid var(--darkblue);
+}
+input[type="submit"]:hover{
+  background-color: var(--greyblue);
+}
+::placeholder{
+font-family:Poppins, 'Calibri',san-serif;
+font-size:17px;
+font-weight: 700;
+color:var(--greyblue);
+}
+h4{
+color:var(--greyblue);
+margin: 6px;
+font-size: 0.85em;
+text-align: center;
+}
+h4 a{
+color:var(--red);
+font-size:14px;
+font-size: 0.85em;
+}
