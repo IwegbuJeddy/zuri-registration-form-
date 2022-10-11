@@ -12,39 +12,40 @@
 
 </head>
 <body>
+    <main>
     <!--main section-->
-    <section id="main" role="main-section">
-        <div id="text" role="text-content">
+    <section id="main" role="section">
+        <div id="text" role="landmark">
             <h1>Learn to code by watching others</h1>
             <p style="line-height:2.0;">See how experienced developers solve real world problems in real time.
                 Watching scripted tutorials is great,but understanding how developers think is invaluable.
             </p>
         </div>
-        <div id="container">
+        <div id="container" role="landmark">
             <!--offer button-->
-       <div id ="offer" role="offer-button">
+       <div id ="offer" role="button">
            <p style="width:auto;"><strong>Try it free 7 days </strong>then $20/mo. thereafter</p>
        </div>
        
        <div id="hello" role="form">
-            <form method="GET">
+            <form method="GET" role="form">
                 <input type="text" id="f_name" placeholder="First Name" required>
-            <div class="error" id="error1">
+            <div class="error" id="error1" role="comment">
                 <i class="fa fa-2x fa-exclamation-circle error-icon"></i>
                 <small class="">First name can't be blank</small>
             </div>
                 <input type="text" id="l_name" placeholder="Last Name"  required>
-                 <div class="error" id="error2">
+                 <div class="error" id="error2"  role="comment">
                 <i class="fa fa-2x  fa-exclamation-circle error-icon"></i>
                 <small class="">Last name can't be blank</small>
             </div>
                 <input type="email" placeholder="Email Address"  id="emailfield" required>
-                 <div class="error" id="error3">
+                 <div class="error" id="error3"  role="comment">
                 <i class="fa fa-2x fa-exclamation-circle error-icon"></i>
                 <small class="">Looks like that isn't an email</small>
             </div>
                 <input type="password" placeholder="Password"  id="passwordfield" required>
-                 <div class="error" id="error4">
+                 <div class="error" id="error4"  role="comment">
                 <i class="fa fa-2x fa-exclamation-circle error-icon"></i>
                 <small class="">Password cannot be blank</small>
             </div>
@@ -57,8 +58,9 @@
         </div>
         
     </section>
+    </main>
        <!--attribution starts here -->
-    <div id="attribution" role="credits">
+    <div id="attribution" role="content-info">
         <p style="text-align:center;">Designed by <a href="https://frontendmentor.io">Frontend Mentor. </a>Coded by <a href="https://github.com/IwegbuJeddy">Iwegbu Jeddy</a></p>
     </div>
     <script>
